@@ -1,12 +1,13 @@
-import "../styles/MainPage.scss"
+import styles from "../styles/modules/MainPage.module.scss"
 
-export default function Main({setHeaderColor}) {
-setHeaderColor('linear-gradient( 90deg,#0081A7,#00AFB9)')
-  return (
-    <div className="main1">
-        <div className="wrapper">
-            Hello World@@@@
+export default function Main() {
+   return (
+    <>
+        <div className={styles.main}>
+            <div className={styles.wrapper}>
+                Hello World!
+            </div>
         </div>
-    </div>
+    </>
   );
 }

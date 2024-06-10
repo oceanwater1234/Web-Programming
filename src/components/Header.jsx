@@ -1,19 +1,32 @@
+import { Link, useLocation } from "react-router-dom"; 
+
 import "../styles/Header.scss";
-import { Link } from "react-router-dom"; 
 import logo from "../icons/logo.png";
-import { useState } from "react";
+import { useEffect } from 'react';
+import  useStore  from '../hooks/Background';
 
+export default function Header() {
+  const BackGroundColor = useStore((state) => state.BackGroundColor)
+  const ChangeBackGroundColor = useStore((state) => state.ChangeBackGroundColor)
+  const location = useLocation()
 
-export default function Header({ backgroundColor }) {
+  useEffect(()=>{
+    switch(location.pathname) {
+      case '/': ChangeBackGroundColor('linear-gradient( 90deg,#0081A7,#00AFB9)'); break;
+      case '/auth': ChangeBackGroundColor('linear-gradient( 90deg,#00AFB9,#FED9B7)'); break;
+      case '/todo': ChangeBackGroundColor('linear-gradient(90deg, #FED9B7, #F07167)'); break;
+      case '/university': ChangeBackGroundColor('linear-gradient(90deg, #F07167, #f8483c)'); break;
+    }
+  },[location,ChangeBackGroundColor])
+  
   return (
-    <div className="container" style={{ background: backgroundColor }}> 
+    <div className="container" style={{background:BackGroundColor}}> 
         <Link to="/">
           <img src={ logo }/>  
         </Link>
-        <Link to="/SignIn">SignIn</Link>
-        <Link to="/SignUp">SignUp</Link>
-        <Link to="/Todo">Todo</Link>
-        <Link to="/University"> University</Link>
+        <Link to="/auth">Auth</Link>
+        <Link to="/todo">Todo</Link>
+        <Link to="/university"> University</Link>
     </div>
   );
 }

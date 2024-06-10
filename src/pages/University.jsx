@@ -1,7 +1,13 @@
+import styles from '../styles/modules/University.module.scss'
+
 export default function University() {
   return (
-    <div>
-      Hello World4
-    </div>
+    <>
+      <div className={styles.main}>
+          <div className={styles.wrapper}>
+              Hello World!
+          </div>
+      </div>
+    </>
   );
 }

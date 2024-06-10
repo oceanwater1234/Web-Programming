@@ -1,0 +1,20 @@
+.main{
+    width:100vw;
+    height: 93vh;
+    background: linear-gradient( 90deg,#00AFB9,#FED9B7);
+    
+    .wrapper {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        font-size: 70px;
+        font-weight: bold;
+        color:white;
+
+        display: flex;
+        flex-direction: row;
+        gap:2px;
+    }
+}
