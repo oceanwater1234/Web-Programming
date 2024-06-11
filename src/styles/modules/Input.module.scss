@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.InputWrapper{
+    display: flex;
+    flex-direction: row;
+    gap:16px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: none;
+    
+    height: 48px;
+    
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+
+    img{
+        height: 30px;
+        width: 30px;
+    }
+}

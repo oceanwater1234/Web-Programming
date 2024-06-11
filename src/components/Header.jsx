@@ -14,7 +14,7 @@ export default function Header() {
     switch(location.pathname) {
       case '/': ChangeBackGroundColor('linear-gradient( 90deg,#0081A7,#00AFB9)'); break;
       case '/auth': ChangeBackGroundColor('linear-gradient( 90deg,#00AFB9,#FED9B7)'); break;
-      case '/todo': ChangeBackGroundColor('linear-gradient(90deg, #FED9B7, #F07167)'); break;
+      case '/Profile': ChangeBackGroundColor('linear-gradient(90deg, #FED9B7, #F07167)'); break;
       case '/university': ChangeBackGroundColor('linear-gradient(90deg, #F07167, #f8483c)'); break;
     }
   },[location,ChangeBackGroundColor])
@@ -25,7 +25,7 @@ export default function Header() {
           <img src={ logo }/>  
         </Link>
         <Link to="/auth">Auth</Link>
-        <Link to="/todo">Todo</Link>
+        <Link to="/Profile">Profile</Link>
         <Link to="/university"> University</Link>
     </div>
   );

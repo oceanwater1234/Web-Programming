@@ -1,6 +1,6 @@
-  import styles from '../styles/modules/Todo.module.scss'
+  import styles from '../styles/modules/Profile.module.scss'
 
-export default function Todo() {
+export default function Profile() {
   return (
     <>
       <div className={styles.main}>

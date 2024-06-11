@@ -1,10 +1,10 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from '../components/Header';
-import Todo from "./Todo";
-import Auth from "./Auth";
+import Profile from "./Profile";
 import Main from "./Main";
 import University from "./University";
+import Auth from "../pages/Auth/Auth";
 
 export default function App() {
   const location = useLocation();
@@ -15,7 +15,7 @@ export default function App() {
       <Routes location={location}>
         <Route path="/" element={<Main/>} />
         <Route path="/auth" element={<Auth />}/>
-        <Route path="/todo" element={<Todo />}/>
+        <Route path="/Profile" element={<Profile />}/>
         <Route path="/university" element={<University/>}/>
       </Routes>
     </>
