@@ -1,24 +1,158 @@
+@mixin borderFunction {
+    border-radius: 15px;
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+}
+
 .main{
-    width:100vw;
-    height: 93vh;
     background: linear-gradient(90deg, #FED9B7, #F07167);
+    
+    display: flex;
+    flex-direction: row;
+    gap:50px;
 
-    .Wrapper {
-        position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        
-        
 
-        .InforWrapper{
+    width: 100%;
+
+
+    .MainWrapper{
+        margin-right: auto;
+        
+        background-color: aqua;
+
+        width:90%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        gap:200px;
+
+        font-family: "Noto Sans KR", sans-serif;
+        color:white;
+
+        .Wrapper {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: center;
+            gap:40px;
 
-            .Infor{
+            margin-top: 90px;
+        
+            .FirstWrapper{
+                @include borderFunction;
+                
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                align-items: center;
+                
+                width: 80vw;
+                height: 20vh;
+
+                
+                .InforGroup{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap:20px;
+                    
+                    width: 40vw;
+
+                    img{
+                        height: 10rem;
+                        width: 10rem;
+                        margin-left: 2%;
+                    }
+                    .Infor{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        
+                        padding-left: 40px;
+                    
+                        .name{
+                            font-size: 2rem;
+                        }
+                        .school{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .day{
+                    display: flex;
+                    flex-direction: row;
+                    gap:20px;
+                    justify-content: center;
+
+                    width: 40vw;
+                    
+                    font-size: 1.6rem;
+                }
             }
+
+            .SecondWrapper{
+                display: flex;
+                flex-direction: row;
+                gap:100px;
+
+                width: 80vw;
+
+                
+                .UniWrapper{
+                    display: flex;
+                    flex-direction: column;
+                    gap:40px;
+                    
+                    width: 70vw;
+                    
+                    @include borderFunction;
+
+                    .title{
+                        font-size: 2rem;
+                        margin: 20px 0 0 40px;
+                    }
+
+                    .UniGroup{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        margin-bottom: 20px;
+
+                        .Uni{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap:20px;
+
+                            img{
+                                width: 20vw;
+                                height: 20vh;
+                            }
+                            .name{
+                                display: flex;
+                                flex-direction: row;
+
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                .Testservice{
+                    width: 10vw;
+                    @include borderFunction;
+                }
+            }
+        }
+
+        .TodoWrapper{
+            width: 80vw;
+            @include borderFunction;
+            height: 85vh;
+
+            margin-bottom: 100px;
         }
     }
 }

@@ -1,0 +1,14 @@
+.Wrapper{
+   display: flex;
+   flex-direction: column;
+
+   .ButtonWrapper{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        .circle{
+            border-radius: 100px;
+            background-color: white;
+        }
+   }
+}
