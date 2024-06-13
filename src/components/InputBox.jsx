@@ -1,5 +1,8 @@
 import styles from '../styles/modules/Input.module.scss'
 
+import Close from "../assets/icons/close.svg"
+import UnClose from "../assets/icons/unclose.svg"
+
 export default function InputBox({
     src,
     id,
@@ -20,19 +23,19 @@ export default function InputBox({
         <div className={styles.InputWrapper} id={id}>
             <img src={src}/>
             <input 
-              type={type ?? "text"} 
-              placeholder={placeholder}
-              value={value}
-              onChange={onChange}
-              required={required}
-              />
+            type={type ?? "text"} 
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+            required={required}
+            />
             { visable !== undefined && (
-                <img id="password"
-                    src={
-                        visable ? "../assets/close.svg" : "../assets/unclose.svg"
-                    }
-                    onClick={()=> setVisable((prev)=> !prev)}
-                />
+            <img 
+                src={
+                    visable ? Close : UnClose
+                }
+                onClick={()=> setVisable((prev)=> !prev)}
+            />
             )}
         </div>
     )

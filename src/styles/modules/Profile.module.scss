@@ -3,14 +3,22 @@
     height: 93vh;
     background: linear-gradient(90deg, #FED9B7, #F07167);
 
-    .wrapper {
+    .Wrapper {
         position: absolute;
         top:50%;
         left: 50%;
         transform: translate(-50%,-50%);
         
-        font-size: 70px;
-        font-weight: bold;
-        color:white;
+        
+
+        .InforWrapper{
+            display: flex;
+            flex-direction: row;
+
+            .Infor{
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
 }

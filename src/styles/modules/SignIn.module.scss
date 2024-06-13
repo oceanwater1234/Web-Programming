@@ -13,6 +13,9 @@
     
     padding-bottom: 20px;
 
+    .title{
+        font-size:4rem;
+    }
 
     .InputWrapper{
         display: flex;
@@ -32,8 +35,13 @@
 
             width: 100%;
 
-            #password{border-radius: 7px 7px 15px 15px;}
-            #username{border-radius: 15px 15px 7px 7px;}
+            #username{
+                border-radius: 15px 15px 7px 7px;
+                padding-right:37px;
+            }
+            #password{
+                border-radius: 7px 7px 15px 15px;
+            }
 
         }
 

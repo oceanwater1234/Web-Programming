@@ -13,7 +13,9 @@
     
     padding-bottom: 20px;
 
-    
+    .title{
+        font-size:4rem;
+    }
 
     .InputWrapper{
         display: flex;
@@ -26,6 +28,8 @@
 
         
         .InputGroup{
+            $right:37px;
+
             display: flex;
             flex-direction: column;
             gap:8px;
@@ -33,10 +37,18 @@
 
             width: 100%;
 
-            #email{border-radius: 15px 15px 7px 7px;}
-            #school{border-radius: 7px;}
-            #name{border-radius: 7px;}
-            #username{border-radius: 7px 7px 15px 15px;}
+            #email{
+                border-radius: 15px 15px 7px 7px;
+                padding-right:$right;
+            }
+            #school , #name{
+                border-radius: 7px;
+                padding-right:$right;
+            }
+            #username{
+                padding-right:$right;
+                border-radius: 7px 7px 15px 15px;
+            }
             #passwordUp{border-radius: 15px 15px 7px 7px;}
             #passwordDown{border-radius: 7px 7px 15px 15px;}
 

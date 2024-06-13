@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom"; 
 
 import "../styles/Header.scss";
-import logo from "../icons/logo.png";
+import logo from "../assets/logo.png";
 import { useEffect } from 'react';
 import  useStore  from '../hooks/Background';
 

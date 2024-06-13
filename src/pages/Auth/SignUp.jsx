@@ -1,16 +1,16 @@
 import { useState } from "react"
-import { Link, useLocation } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom"
 
 import styles from "../../styles/modules/SignUp.module.scss"
 import InputBox from "../../components/InputBox"
+import { signin } from "../../api/auth/signin"
 
 import Email from "../../assets/icons/email.svg"
 import School from "../../assets/icons/school.svg"
 import Name from "../../assets/icons/name.svg"
 import Username from "../../assets/icons/username.svg"
 import Password from "../../assets/icons/password.svg"
-import Close from "../../assets/icons/close.svg"
-import UnClose from "../../assets/icons/unclose.svg"
+
 
 export default function SignUp() {
     const [email,setEmail] = useState("");
@@ -18,14 +18,29 @@ export default function SignUp() {
     const [name,setName] = useState("");
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
-    const [chekcPassword,setCheckPassword] = useState("");
+    const [checkPassword,setCheckPassword] = useState("");
     const [visible,setVisable] = useState(false);
     const [checkVisible,setCheckvisable] = useState(false);
+
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        if (password !== checkPassword) {
+          alert("비밀번호가 일치하지 않습니다.");
+          return;
+        }
+    
+        signin({ email , school  , name , username , password })
+          .then(() => navigate("/"))
+          .catch(() => {
+            alert("회원가입에 실패했습니다.");
+        });
+    };
 
     return (
         <div className={styles.Wrapper}>
             <div className={styles.title}> SignUp </div>
-                <form className={styles.InputWrapper} action="" method="post">
+                <form className={styles.InputWrapper} action="auth/SignIn" method="post">
                     <div className={styles.InputGroup}>
                         <InputBox 
                             id={styles.email}
@@ -75,6 +90,8 @@ export default function SignUp() {
                             placeholder={"비밀번호"}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            visable={visible}
+                            setVisable={setVisable}
                             required={"required"}
                         /> {/* password */}
 
@@ -83,8 +100,10 @@ export default function SignUp() {
                             src={Password} 
                             type={"password"} 
                             placeholder={"비밀번호"}
-                            value={chekcPassword}
+                            value={checkPassword}
                             onChange={(e) => setCheckPassword(e.target.value)}
+                            visable={checkVisible}
+                            setVisable={setCheckvisable}
                             required={"required"}
                         /> {/* check password */}
                     </div>

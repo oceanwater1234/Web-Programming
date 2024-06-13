@@ -8,16 +8,19 @@
     justify-content: center;
     align-items: center;
 
-    background-color: none;
     
     height: 48px;
     
     border-color: white;
     border-width: 2px;
     border-style: solid;
+    
+    input{
+        width: 10vw;
+    }
 
     img{
-        height: 30px;
-        width: 30px;
+        height: 25px;
+        width: 25px;
     }
 }

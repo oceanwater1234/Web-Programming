@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from '../components/Header';
-import Profile from "./Profile";
+import Profile from "../pages/Profile/Profile";
 import Main from "./Main";
 import University from "./University";
 import Auth from "../pages/Auth/Auth";
