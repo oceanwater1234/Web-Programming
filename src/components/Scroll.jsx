@@ -2,7 +2,6 @@ import '../styles/Scroll.scss'
 
 export default function Scroll() {
     const moveScrollByTop = () => {
-        
         window.scroll({ top: 0, behavior: "smooth" });
     };
 
@@ -11,8 +10,8 @@ export default function Scroll() {
     };
 
     return(
-        <div className='Wrapper'>
-            <div className='ButtonWrapper'>
+        <div className='ButtonWrapper'>
+            <div className='ButtonGroup'>
                 <div className='circle' onClick={moveScrollByTop}></div>
                 <div className='circle' onClick={moveScrollByDown}></div>
             </div>

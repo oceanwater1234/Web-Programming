@@ -1,158 +1,194 @@
 @mixin borderFunction {
-    border-radius: 15px;
-    border-color: white;
-    border-width: 3px;
-    border-style: solid;
+  border-radius: 15px;
+  border-color: white;
+  border-width: 3px;
+  border-style: solid;
 }
 
-.main{
-    background: linear-gradient(90deg, #FED9B7, #F07167);
-    
+.main {
+  background-color: #2aba8f;
+
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+
+  .MainWrapper {
+    width: 93%;
+
     display: flex;
-    flex-direction: row;
-    gap:50px;
+    flex-direction: column;
+    align-items: center;
 
+    gap: 200px;
 
-    width: 100%;
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
 
+    .Wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
 
-    .MainWrapper{
-        margin-right: auto;
-        
-        background-color: aqua;
+      margin-top: 90px;
 
-        width:90%;
-        
+      .FirstWrapper {
+        @include borderFunction;
+
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
 
+        width: 80vw;
+        height: 20vh;
 
-        gap:200px;
+        .InforGroup {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
 
-        font-family: "Noto Sans KR", sans-serif;
-        color:white;
+          width: 40vw;
 
-        .Wrapper {
+          img {
+            height: 7em;
+            width: 7em;
+            margin-left: 2em;
+          }
+          .Infor {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap:40px;
+            justify-content: center;
 
-            margin-top: 90px;
-        
-            .FirstWrapper{
-                @include borderFunction;
-                
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                
-                width: 80vw;
+            padding-left: 40px;
+
+            .name {
+              font-size: 2rem;
+            }
+            .school {
+              font-size: 1rem;
+            }
+          }
+        }
+        .day {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          justify-content: center;
+
+          width: 40vw;
+
+          font-size: 1.6rem;
+        }
+      }
+
+      .SecondWrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+        width: 80vw;
+
+        .UniWrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          width: 70vw;
+
+          @include borderFunction;
+
+          .title {
+            font-size: 2rem;
+            margin: 20px 0 0 40px;
+          }
+
+          .UniGroup {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            .Uni {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 20px;
+
+              img {
+                width: 20vw;
                 height: 20vh;
-
-                
-                .InforGroup{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap:20px;
-                    
-                    width: 40vw;
-
-                    img{
-                        height: 10rem;
-                        width: 10rem;
-                        margin-left: 2%;
-                    }
-                    .Infor{
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        
-                        padding-left: 40px;
-                    
-                        .name{
-                            font-size: 2rem;
-                        }
-                        .school{
-                            font-size: 1rem;
-                        }
-                    }
-                }
-                .day{
-                    display: flex;
-                    flex-direction: row;
-                    gap:20px;
-                    justify-content: center;
-
-                    width: 40vw;
-                    
-                    font-size: 1.6rem;
-                }
-            }
-
-            .SecondWrapper{
+              }
+              .name {
                 display: flex;
                 flex-direction: row;
-                gap:100px;
 
-                width: 80vw;
+                font-weight: bold;
+              }
+            }
+          }
+        }
 
+        .ThirdWrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          width: 14vw;
+          .SiteWrapper {
+              @include borderFunction;
+              
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              align-items: center;
+
+              height: 24vh;
+
+
+              .title {
+                margin-top: 20px;
+                font-size: 1.5em;
+              }
+            }
+
+            .EditWrapper {
+                @include borderFunction;
+                height: 11vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 
-                .UniWrapper{
-                    display: flex;
-                    flex-direction: column;
-                    gap:40px;
-                    
-                    width: 70vw;
-                    
-                    @include borderFunction;
+                padding-left: 30px;
 
-                    .title{
-                        font-size: 2rem;
-                        margin: 20px 0 0 40px;
-                    }
-
-                    .UniGroup{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        margin-bottom: 20px;
-
-                        .Uni{
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            gap:20px;
-
-                            img{
-                                width: 20vw;
-                                height: 20vh;
-                            }
-                            .name{
-                                display: flex;
-                                flex-direction: row;
-
-                                font-weight: bold;
-                            }
-                        }
-                    }
+                .EditSet{
+                  display: flex;
+                  flex-direction: row;
+                  gap:5px;
                 }
-
-                .Testservice{
-                    width: 10vw;
-                    @include borderFunction;
+                .EditTodo{
+                  display: flex;
+                  flex-direction: row;
+                  gap:5px;
                 }
             }
         }
-
-        .TodoWrapper{
-            width: 80vw;
-            @include borderFunction;
-            height: 85vh;
-
-            margin-bottom: 100px;
-        }
+      }
     }
+
+    .TodoWrapper {
+      @include borderFunction;
+      width: 80vw;
+      height: 85vh;
+      margin: 10em 0 3em 0 ;
+
+      display: flex;
+
+      .title{
+        font-weight: bold;
+        font-size: 2em;
+      }
+    }
+  }
 }
