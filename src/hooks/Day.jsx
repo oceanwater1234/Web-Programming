@@ -14,7 +14,7 @@ export default function Dday(props){
         3 : "2024-10-15T00:00+0900", //10월 모의평가
         4 : "2024-11-14T00:00+0900", //11월 대학수학능력평가
     }
-    console.log(props.day)
+
     if(props.day){
         return(
             <div>대학수학능력평가 D-{Day(testList[4])}</div>

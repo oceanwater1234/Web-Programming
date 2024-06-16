@@ -5,7 +5,7 @@ export default function Main() {
     <>
         <div className={styles.main}>
             <div className={styles.wrapper}>
-                Hello World!
+                Go to University One Try!!!!!
             </div>
         </div>
     </>

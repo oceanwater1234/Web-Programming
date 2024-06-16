@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import styles from "../../styles/modules/SignUp.module.scss"
 import InputBox from "../../components/InputBox"
-import { signin } from "../../api/auth/signin"
+import { signup } from "../../api/auth/signup"
 
 import Email from "../../assets/icons/email.svg"
 import School from "../../assets/icons/school.svg"
@@ -30,7 +30,7 @@ export default function SignUp() {
           return;
         }
     
-        signin({ email , school  , name , username , password })
+        signup({email , school  , name , username , password})
           .then(() => navigate("/"))
           .catch(() => {
             alert("회원가입에 실패했습니다.");
@@ -40,12 +40,13 @@ export default function SignUp() {
     return (
         <div className={styles.Wrapper}>
             <div className={styles.title}> SignUp </div>
-                <form className={styles.InputWrapper} action="auth/SignIn" method="post">
+                <form 
+                    className={styles.InputWrapper} 
+                    onSubmit={(e)=>{e.preventDefault();handleSubmit();}}>
                     <div className={styles.InputGroup}>
                         <InputBox 
                             id={styles.email}
                             src={Email} 
-                            type={"email"} 
                             placeholder={"이메일"}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -55,7 +56,6 @@ export default function SignUp() {
                         <InputBox 
                             id={styles.school}
                             src={School}  
-                            type={"text"} 
                             placeholder={"학교"}
                             value={school}
                             onChange={(e) => setSchool(e.target.value)}
@@ -65,7 +65,6 @@ export default function SignUp() {
                         <InputBox 
                             id={styles.name}
                             src={Name}  
-                            type={"text"} 
                             placeholder={"이름"}
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -75,7 +74,6 @@ export default function SignUp() {
                         <InputBox 
                             id={styles.username}
                             src={Username} 
-                            type={"text"} 
                             placeholder={"아이디"}
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}

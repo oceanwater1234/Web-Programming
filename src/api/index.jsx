@@ -1,18 +1,18 @@
 import axios from "axios"
 
-export const apiInstance = (withCredentials) => {
-    axios.create({
-        baseURL:"http://localhost:8000/auth/SignUp",
-        withCredentials: withCredentials ?? true,
-        headers:{
-            "Content-Type": "application/json",
-        }
-    })
-}
+export const apiInstance = (withCredentials) => 
+axios.create({
+    baseURL:"http://localhost:8000/auth/SignUp",
+    withCredentials: withCredentials ?? true,
+    headers:{
+        "Content-Type": "application/json",
+    },
+})
+
 
 let originalRequest = [];
 
-export const authInstance = (retry) => {
+export const authInstance = () => {
     const instance = axios.create({
         baseURL:"http://localhost:8000/auth/SignUp",
         withCredentials:true,

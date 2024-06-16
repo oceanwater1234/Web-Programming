@@ -15,7 +15,7 @@ export default function Header() {
       case '/': ChangeBackGroundColor('#042121'); break;
       case '/auth': ChangeBackGroundColor('#035e49'); break;
       case '/Profile': ChangeBackGroundColor('#2aba8f'); break;
-      case '/university': ChangeBackGroundColor('#00d67d'); break;
+      case '/Todo': ChangeBackGroundColor('#00d67d'); break;
     }
   },[location,ChangeBackGroundColor])
   
@@ -26,7 +26,7 @@ export default function Header() {
         </Link>
         <Link to="/auth">Auth</Link>
         <Link to="/Profile">Profile</Link>
-        <Link to="/university"> University</Link>
+        <Link to="/Todo"> Todo</Link>
     </div>
   );
 }

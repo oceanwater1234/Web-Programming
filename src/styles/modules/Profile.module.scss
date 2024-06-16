@@ -177,17 +177,123 @@
       }
     }
 
-    .TodoWrapper {
+    .FourWrapper {
       @include borderFunction;
       width: 80vw;
       height: 85vh;
       margin: 10em 0 3em 0 ;
 
       display: flex;
+      flex-direction: column;
+      gap:50px;
 
-      .title{
-        font-weight: bold;
-        font-size: 2em;
+      .TitleWrapper{
+        display: flex;
+        flex-direction: row;
+        gap:50px;
+
+        margin: 20px 0px 0px 40px;
+        .Infor{
+          display:flex;
+          flex-direction: row;
+          align-items: center;
+          gap:70px;
+  
+          img{
+            width: 10vw;
+            height: 20vh;
+          }
+          
+          .list{
+            display: flex;
+            flex-direction: column;
+            .title{
+              font-weight: bold;
+              font-size: 2em;
+            }
+          }
+        }
+
+        .DocumentWrapper{
+          display:flex;
+          flex-direction: row;
+          align-items: center;
+          gap:20px;
+
+
+          .DownloadWrapper{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            width: 10vw;
+            height: 8vh;
+            @include borderFunction;
+
+            .Download{
+              display:flex;
+              flex-direction: row;
+              justify-content: center;
+              cursor: pointer;
+
+              img{
+                width: 2vw;
+                height: 2vh;
+              }
+              .name{
+                font-size: 0.9em;
+              }
+
+            }
+          }
+        }
+      }
+      .UnderWrapper{
+        display: flex;
+        flex-direction: row;
+        gap:20px;
+
+        .UniversityWrapper{
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0px 0px 40px;
+            gap:20px;
+
+            .UniversityTitle{
+              display: flex;
+              flex-direction: row;
+              gap:20px;
+              align-items: center;
+              
+              
+              font-size: 1.5em;
+              font-weight: bold;
+              
+              .UniversityType{
+                display: flex;
+                flex-direction: row;
+                gap:20px;
+                img{
+                  cursor: pointer;
+                  transform: rotate(270deg);
+                }
+              }
+            }
+            .UniversityChart{
+              @include borderFunction;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap:100px;
+             
+              height: 45vh;
+              
+              display: flex;
+              align-items: center;
+            }
+            #one{width: 40VW;}
+            #two{width: 30VW;}
+          }
       }
     }
   }

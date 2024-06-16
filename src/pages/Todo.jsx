@@ -1,11 +1,11 @@
-import styles from '../styles/modules/University.module.scss'
+import styles from '../styles/modules/Todo.module.scss'
 
-export default function University() {
+export default function Todo() {
   return (
     <>
       <div className={styles.main}>
           <div className={styles.wrapper}>
-              Hello World!
+              Hello World
           </div>
       </div>
     </>

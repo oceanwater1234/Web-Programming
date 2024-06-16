@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 import styles from "../../styles/modules/SignIn.module.scss"
 import InputBox from "../../components/InputBox"
+import { signin } from "../../api/auth/signin"
 
 import Username from "../../assets/icons/username.svg"
 import Password from "../../assets/icons/password.svg"
@@ -11,10 +13,22 @@ export default function SignIn() {
     const [password,setPassword] = useState("");
     const [visible,setVisable] = useState(false);
 
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        signin({username , password})
+          .then(() => navigate("/Profile"))
+          .catch(() => {
+            alert("로그인에 실패했습니다.");
+        });
+    };
+
     return (
         <div className={styles.Wrapper}>
             <div className={styles.title}> SignIn </div>
-            <form className={styles.InputWrapper} action="auth/SignIn" method="post">
+            <form 
+                className={styles.InputWrapper} 
+                onSubmit={(e)=>{e.preventDefault();handleSubmit();}}> 
                 <div className={styles.InputGroup}>
                     <InputBox 
                         id={styles.username}

@@ -1,10 +1,21 @@
 import '../styles/Calender.scss'
 
-export default function Calender() {
+function GetDay() {
     const currentDate = new Date();
     const year = currentDate.getFullYear()
-    const getDaysInMonth = 
+    const month = currentDate.getMonth() + 1
+    
+    const getDaysInMonth = (year,month) => {
+        return new Date(year, month,0).getDate()
+    }
+    
+    console.log(getDaysInMonth(year,month))
+}
 
+
+export default function Calender() {
+
+    
     return(
         <div className='CalenderWrapper'>
             <div className='month'></div>
